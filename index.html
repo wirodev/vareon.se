@@ -1,0 +1,550 @@
+<!doctype html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vareon | Webbutveckling, webbappar och AI-processer</title>
+    <meta name="description"
+        content="Vareon bygger snabba webbplatser, webbappar och backendlösningar. Vi kombinerar modern utveckling med AI-drivna processer för att leverera kvalitet snabbt." />
+    <meta name="theme-color" content="#0b1220" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Vareon | Webbutveckling, webbappar och AI-processer" />
+    <meta property="og:description"
+        content="Snabba webbplatser, webbappar och backend. Modern utveckling + AI-processer." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://vareon.se" />
+
+    <!-- Tailwind CDN (ingen build krävs för första versionen) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bg: "#070b14",
+                        panel: "#0b1220",
+                        line: "rgba(255,255,255,0.08)",
+                        text: "rgba(255,255,255,0.90)",
+                        muted: "rgba(255,255,255,0.70)",
+                        brand: "#7c3aed",
+                        brand2: "#22c55e"
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .noise {
+            background-image: radial-gradient(circle at 20% 10%, rgba(124, 58, 237, 0.25), transparent 35%),
+                radial-gradient(circle at 80% 20%, rgba(34, 197, 94, 0.18), transparent 40%),
+                radial-gradient(circle at 50% 80%, rgba(59, 130, 246, 0.12), transparent 45%);
+        }
+    </style>
+
+    <!-- Basic Organization schema -->
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Vareon",
+    "url": "https://vareon.se",
+    "description": "Webbutveckling, webbappar, backend och AI-processer.",
+    "areaServed": "SE",
+    "sameAs": []
+  }
+  </script>
+</head>
+
+<body class="bg-bg text-white noise">
+    <!-- Top bar -->
+    <header class="sticky top-0 z-50 border-b border-line bg-bg/70 backdrop-blur">
+        <div class="mx-auto max-w-6xl px-4">
+            <div class="flex h-16 items-center justify-between">
+                <a href="#top" class="flex items-center gap-2 font-semibold tracking-tight">
+                    <span
+                        class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-white/5 ring-1 ring-line">
+                        <span class="text-lg">V</span>
+                    </span>
+                    <span>Vareon</span>
+                </a>
+
+                <nav class="hidden items-center gap-6 text-sm text-muted md:flex">
+                    <a class="hover:text-white" href="#tjanster">Tjänster</a>
+                    <a class="hover:text-white" href="#process">Process</a>
+                    <a class="hover:text-white" href="#cases">Cases</a>
+                    <a class="hover:text-white" href="#om">Om oss</a>
+                    <a class="hover:text-white" href="#kontakt">Kontakt</a>
+                </nav>
+
+                <div class="flex items-center gap-3">
+                    <a href="#kontakt"
+                        class="hidden rounded-xl bg-white/10 px-4 py-2 text-sm font-medium ring-1 ring-line hover:bg-white/15 md:inline-flex">
+                        Be om offert
+                    </a>
+                    <button id="mobileBtn"
+                        class="inline-flex items-center justify-center rounded-xl bg-white/5 px-3 py-2 ring-1 ring-line hover:bg-white/10 md:hidden"
+                        aria-label="Öppna meny">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile nav -->
+            <div id="mobileNav" class="hidden pb-4 md:hidden">
+                <div class="flex flex-col gap-2 rounded-2xl bg-panel/60 p-3 ring-1 ring-line">
+                    <a class="rounded-xl px-3 py-2 text-sm text-muted hover:bg-white/5 hover:text-white"
+                        href="#tjanster">Tjänster</a>
+                    <a class="rounded-xl px-3 py-2 text-sm text-muted hover:bg-white/5 hover:text-white"
+                        href="#process">Process</a>
+                    <a class="rounded-xl px-3 py-2 text-sm text-muted hover:bg-white/5 hover:text-white"
+                        href="#cases">Cases</a>
+                    <a class="rounded-xl px-3 py-2 text-sm text-muted hover:bg-white/5 hover:text-white" href="#om">Om
+                        oss</a>
+                    <a class="rounded-xl px-3 py-2 text-sm text-muted hover:bg-white/5 hover:text-white"
+                        href="#kontakt">Kontakt</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <main id="top">
+        <section class="mx-auto max-w-6xl px-4 pt-16 md:pt-24">
+            <div class="grid gap-10 md:grid-cols-12 md:items-center">
+                <div class="md:col-span-7">
+                    <p
+                        class="inline-flex items-center gap-2 rounded-full bg-white/5 px-4 py-2 text-sm text-muted ring-1 ring-line">
+                        <span class="h-2 w-2 rounded-full bg-brand"></span>
+                        Webbutveckling, webbappar och AI-processer
+                    </p>
+
+                    <h1 class="mt-6 text-4xl font-semibold leading-tight tracking-tight md:text-5xl">
+                        Vi bygger snabba webbplatser och webbappar som driver resultat.
+                    </h1>
+
+                    <p class="mt-5 max-w-xl text-base leading-relaxed text-muted md:text-lg">
+                        Vareon är en liten byrå med stor leverans. Vi kombinerar modern utveckling med AI-drivna
+                        processer för att få ut kvalitet snabbt,
+                        utan onödigt krångel.
+                    </p>
+
+                    <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+                        <a href="#kontakt"
+                            class="inline-flex items-center justify-center rounded-xl bg-brand px-5 py-3 text-sm font-semibold text-white hover:opacity-90">
+                            Boka ett kort intro
+                        </a>
+                        <a href="#tjanster"
+                            class="inline-flex items-center justify-center rounded-xl bg-white/10 px-5 py-3 text-sm font-semibold ring-1 ring-line hover:bg-white/15">
+                            Se vad vi erbjuder
+                        </a>
+                    </div>
+
+                    <div class="mt-10 grid gap-3 sm:grid-cols-3">
+                        <div class="rounded-2xl bg-white/5 p-4 ring-1 ring-line">
+                            <p class="text-sm font-semibold">Tydlig scope</p>
+                            <p class="mt-1 text-sm text-muted">Fast pris eller sprint. Du vet alltid vad som händer.</p>
+                        </div>
+                        <div class="rounded-2xl bg-white/5 p-4 ring-1 ring-line">
+                            <p class="text-sm font-semibold">Senior leverans</p>
+                            <p class="mt-1 text-sm text-muted">.NET, React, SQL och stabila integrationer.</p>
+                        </div>
+                        <div class="rounded-2xl bg-white/5 p-4 ring-1 ring-line">
+                            <p class="text-sm font-semibold">AI som verktyg</p>
+                            <p class="mt-1 text-sm text-muted">Kortare ledtider och smartare arbetsflöden.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="md:col-span-5">
+                    <div class="rounded-3xl bg-panel/60 p-6 ring-1 ring-line">
+                        <h2 class="text-lg font-semibold">Snabb start</h2>
+                        <p class="mt-2 text-sm text-muted">
+                            Vanliga uppdrag vi kan starta denna vecka.
+                        </p>
+
+                        <ul class="mt-5 space-y-3 text-sm">
+                            <li class="flex items-start gap-3 rounded-2xl bg-white/5 p-4 ring-1 ring-line">
+                                <span
+                                    class="mt-0.5 inline-flex h-6 w-6 items-center justify-center rounded-lg bg-brand/20 text-brand">1</span>
+                                <div>
+                                    <p class="font-semibold">One page-sajt</p>
+                                    <p class="text-muted">Design, copy, kod, deploy. Klar snabbt och snyggt.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3 rounded-2xl bg-white/5 p-4 ring-1 ring-line">
+                                <span
+                                    class="mt-0.5 inline-flex h-6 w-6 items-center justify-center rounded-lg bg-brand2/20 text-brand2">2</span>
+                                <div>
+                                    <p class="font-semibold">Interna verktyg</p>
+                                    <p class="text-muted">Dashboard, admin, kalkylatorer, formulär och automation.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3 rounded-2xl bg-white/5 p-4 ring-1 ring-line">
+                                <span
+                                    class="mt-0.5 inline-flex h-6 w-6 items-center justify-center rounded-lg bg-white/10">3</span>
+                                <div>
+                                    <p class="font-semibold">API och integrationer</p>
+                                    <p class="text-muted">Betalningar, CRM, lagersystem, dataflöden och rapportering.
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="mt-6 rounded-2xl bg-white/5 p-4 ring-1 ring-line">
+                            <p class="text-sm font-semibold">Målbild</p>
+                            <p class="mt-1 text-sm text-muted">
+                                En lösning som är lätt att underhålla, snabb för användaren och enkel att
+                                vidareutveckla.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services -->
+        <section id="tjanster" class="mx-auto mt-16 max-w-6xl px-4 md:mt-24">
+            <div class="flex items-end justify-between gap-6">
+                <div>
+                    <h2 class="text-2xl font-semibold tracking-tight md:text-3xl">Tjänster</h2>
+                    <p class="mt-2 max-w-2xl text-muted">
+                        Vi bygger det som behövs för att nå affärsmål. Inte mer, inte mindre.
+                    </p>
+                </div>
+            </div>
+
+            <div class="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+                <div class="rounded-3xl bg-white/5 p-6 ring-1 ring-line">
+                    <p class="text-sm font-semibold">Webbsidor utan CMS</p>
+                    <p class="mt-2 text-sm text-muted">
+                        Snabba, säkra och SEO-vänliga sajter. Perfekt när ni vill slippa administration och plugins.
+                    </p>
+                    <p class="mt-4 text-xs text-muted">Leverans: design, copy, kod och deploy</p>
+                </div>
+
+                <div class="rounded-3xl bg-white/5 p-6 ring-1 ring-line">
+                    <p class="text-sm font-semibold">Webbappar</p>
+                    <p class="mt-2 text-sm text-muted">
+                        Kundportaler, interna verktyg, dashboards och flöden. Byggt för att växa och underhållas.
+                    </p>
+                    <p class="mt-4 text-xs text-muted">Exempel: React, SSR, auth, admin</p>
+                </div>
+
+                <div class="rounded-3xl bg-white/5 p-6 ring-1 ring-line">
+                    <p class="text-sm font-semibold">Backend och API</p>
+                    <p class="mt-2 text-sm text-muted">
+                        Stabil datamodellering, integrationer och tjänster i .NET. Fokus på prestanda och säkerhet.
+                    </p>
+                    <p class="mt-4 text-xs text-muted">Exempel: C#, .NET, SQL, REST</p>
+                </div>
+
+                <div class="rounded-3xl bg-white/5 p-6 ring-1 ring-line">
+                    <p class="text-sm font-semibold">Automation och AI-processer</p>
+                    <p class="mt-2 text-sm text-muted">
+                        Vi bygger workflows och agentupplägg som sparar tid: content, kundsupport, interna processer och
+                        rapportering.
+                    </p>
+                    <p class="mt-4 text-xs text-muted">Exempel: prompts, pipelines, validering</p>
+                </div>
+
+                <div class="rounded-3xl bg-white/5 p-6 ring-1 ring-line">
+                    <p class="text-sm font-semibold">WordPress när det är rätt</p>
+                    <p class="mt-2 text-sm text-muted">
+                        Om ni redan är på WordPress kan vi optimera, städa upp och skapa en mer hållbar struktur.
+                    </p>
+                    <p class="mt-4 text-xs text-muted">Fokus: prestanda, SEO, mindre strul</p>
+                </div>
+
+                <div class="rounded-3xl bg-white/5 p-6 ring-1 ring-line">
+                    <p class="text-sm font-semibold">Förvaltning</p>
+                    <p class="mt-2 text-sm text-muted">
+                        Löpande förbättringar, säkerhetsuppdateringar och vidareutveckling. Ni får en partner som tar
+                        ansvar.
+                    </p>
+                    <p class="mt-4 text-xs text-muted">Upplägg: månadsbudget eller klippkort</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process -->
+        <section id="process" class="mx-auto mt-16 max-w-6xl px-4 md:mt-24">
+            <div class="rounded-3xl bg-panel/60 p-8 ring-1 ring-line">
+                <h2 class="text-2xl font-semibold tracking-tight md:text-3xl">Så jobbar vi</h2>
+                <p class="mt-2 max-w-2xl text-muted">
+                    En enkel process som gör att ni får tydlighet, tempo och kvalitet.
+                </p>
+
+                <div class="mt-8 grid gap-4 md:grid-cols-4">
+                    <div class="rounded-2xl bg-white/5 p-5 ring-1 ring-line">
+                        <p class="text-sm font-semibold">1. Förstudie</p>
+                        <p class="mt-2 text-sm text-muted">20 minuter. Mål, målgrupp, scope och risker.</p>
+                    </div>
+                    <div class="rounded-2xl bg-white/5 p-5 ring-1 ring-line">
+                        <p class="text-sm font-semibold">2. Förslag</p>
+                        <p class="mt-2 text-sm text-muted">Tidplan, kostnad, prioriteringar. Inga överraskningar.</p>
+                    </div>
+                    <div class="rounded-2xl bg-white/5 p-5 ring-1 ring-line">
+                        <p class="text-sm font-semibold">3. Bygg</p>
+                        <p class="mt-2 text-sm text-muted">Staging tidigt, veckovisa avstämningar, snabb feedback.</p>
+                    </div>
+                    <div class="rounded-2xl bg-white/5 p-5 ring-1 ring-line">
+                        <p class="text-sm font-semibold">4. Lansera</p>
+                        <p class="mt-2 text-sm text-muted">Deploy, mätning, förbättringar och förvaltning vid behov.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cases -->
+        <section id="cases" class="mx-auto mt-16 max-w-6xl px-4 md:mt-24">
+            <div class="flex items-end justify-between gap-6">
+                <div>
+                    <h2 class="text-2xl font-semibold tracking-tight md:text-3xl">Utvalda cases</h2>
+                    <p class="mt-2 max-w-2xl text-muted">
+                        Börja med anonymiserade exempel och byt ut när ni vill. Case handlar om problem, lösning och
+                        effekt.
+                    </p>
+                </div>
+            </div>
+
+            <div class="mt-8 grid gap-4 md:grid-cols-3">
+                <article class="rounded-3xl bg-white/5 p-6 ring-1 ring-line">
+                    <p class="text-xs text-muted">Webb</p>
+                    <h3 class="mt-2 text-base font-semibold">One page-sajt med hög konvertering</h3>
+                    <p class="mt-2 text-sm text-muted">
+                        Tydlig struktur, snabb laddtid och enkel deploy. Fokus på CTA och trovärdighet.
+                    </p>
+                    <p class="mt-4 text-xs text-muted">Resultat: snabbare lansering, bättre lead-flöde</p>
+                </article>
+
+                <article class="rounded-3xl bg-white/5 p-6 ring-1 ring-line">
+                    <p class="text-xs text-muted">Webbapp</p>
+                    <h3 class="mt-2 text-base font-semibold">Intern dashboard och datavyer</h3>
+                    <p class="mt-2 text-sm text-muted">
+                        React-baserad app med tydlig behörighet och rapportering. Byggt för att kunna växa.
+                    </p>
+                    <p class="mt-4 text-xs text-muted">Resultat: mindre manuellt arbete, snabbare beslut</p>
+                </article>
+
+                <article class="rounded-3xl bg-white/5 p-6 ring-1 ring-line">
+                    <p class="text-xs text-muted">Automation</p>
+                    <h3 class="mt-2 text-base font-semibold">AI-workflow för content och kvalitet</h3>
+                    <p class="mt-2 text-sm text-muted">
+                        Pipeline som planerar, skriver, validerar och publicerar med checklista och struktur.
+                    </p>
+                    <p class="mt-4 text-xs text-muted">Resultat: kortare ledtid och jämnare kvalitet</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Tech -->
+        <section class="mx-auto mt-16 max-w-6xl px-4 md:mt-24">
+            <div class="rounded-3xl bg-white/5 p-8 ring-1 ring-line">
+                <h2 class="text-2xl font-semibold tracking-tight md:text-3xl">Teknik vi levererar i</h2>
+                <p class="mt-2 max-w-2xl text-muted">
+                    Modern stack som är enkel att drifta och vidareutveckla.
+                </p>
+
+                <div class="mt-6 flex flex-wrap gap-2">
+                    <span class="rounded-full bg-white/5 px-4 py-2 text-sm ring-1 ring-line">C#</span>
+                    <span class="rounded-full bg-white/5 px-4 py-2 text-sm ring-1 ring-line">.NET</span>
+                    <span class="rounded-full bg-white/5 px-4 py-2 text-sm ring-1 ring-line">JavaScript</span>
+                    <span class="rounded-full bg-white/5 px-4 py-2 text-sm ring-1 ring-line">React</span>
+                    <span class="rounded-full bg-white/5 px-4 py-2 text-sm ring-1 ring-line">SQL</span>
+                    <span class="rounded-full bg-white/5 px-4 py-2 text-sm ring-1 ring-line">REST API</span>
+                    <span class="rounded-full bg-white/5 px-4 py-2 text-sm ring-1 ring-line">CI/CD</span>
+                    <span class="rounded-full bg-white/5 px-4 py-2 text-sm ring-1 ring-line">SEO</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section id="om" class="mx-auto mt-16 max-w-6xl px-4 md:mt-24">
+            <div class="grid gap-6 md:grid-cols-12 md:items-start">
+                <div class="md:col-span-7">
+                    <h2 class="text-2xl font-semibold tracking-tight md:text-3xl">Om Vareon</h2>
+                    <p class="mt-3 text-muted">
+                        Vi är en liten byrå som gillar tydlighet och tempo. Vi bygger hellre en enkel och robust lösning
+                        som går att vidareutveckla,
+                        än något som blir tungt att äga.
+                    </p>
+                    <p class="mt-3 text-muted">
+                        Vi använder AI som ett praktiskt verktyg för att förbättra processer, kvalitet och ledtider.
+                        Inte som en genväg som skapar teknisk skuld.
+                    </p>
+                </div>
+
+                <div class="md:col-span-5">
+                    <div class="rounded-3xl bg-panel/60 p-6 ring-1 ring-line">
+                        <p class="text-sm font-semibold">Vad ni får</p>
+                        <ul class="mt-4 space-y-3 text-sm text-muted">
+                            <li class="rounded-2xl bg-white/5 p-4 ring-1 ring-line">En tydlig plan och en leverans som
+                                går att ta över.</li>
+                            <li class="rounded-2xl bg-white/5 p-4 ring-1 ring-line">Snabb feedbackloop och prioritering
+                                på det som ger effekt.</li>
+                            <li class="rounded-2xl bg-white/5 p-4 ring-1 ring-line">Kod och struktur som är lätt att
+                                underhålla.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="mx-auto mt-16 max-w-6xl px-4 md:mt-24">
+            <div class="rounded-3xl bg-gradient-to-r from-brand/25 via-white/5 to-brand2/20 p-8 ring-1 ring-line">
+                <div class="flex flex-col justify-between gap-6 md:flex-row md:items-center">
+                    <div>
+                        <h2 class="text-2xl font-semibold tracking-tight md:text-3xl">Vill du lansera snabbt och snyggt?
+                        </h2>
+                        <p class="mt-2 max-w-2xl text-muted">
+                            Skriv några rader om vad ni behöver. Vi återkommer med upplägg och prisförslag.
+                        </p>
+                    </div>
+                    <div class="flex gap-3">
+                        <a href="#kontakt"
+                            class="inline-flex items-center justify-center rounded-xl bg-white px-5 py-3 text-sm font-semibold text-bg hover:opacity-90">
+                            Kontakta oss
+                        </a>
+                        <a href="mailto:hello@vareon.se?subject=Förfrågan%20Vareon"
+                            class="inline-flex items-center justify-center rounded-xl bg-white/10 px-5 py-3 text-sm font-semibold ring-1 ring-line hover:bg-white/15">
+                            Maila direkt
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="kontakt" class="mx-auto mt-16 max-w-6xl px-4 pb-20 md:mt-24">
+            <div class="grid gap-6 md:grid-cols-12">
+                <div class="md:col-span-5">
+                    <h2 class="text-2xl font-semibold tracking-tight md:text-3xl">Kontakt</h2>
+                    <p class="mt-2 text-muted">
+                        Berätta kort vad ni vill bygga och när ni vill vara live.
+                    </p>
+
+                    <div class="mt-6 rounded-3xl bg-white/5 p-6 ring-1 ring-line">
+                        <p class="text-sm font-semibold">E-post</p>
+                        <a class="mt-1 block text-sm text-muted hover:text-white"
+                            href="mailto:hello@vareon.se">hello@vareon.se</a>
+
+                        <p class="mt-5 text-sm font-semibold">Plats</p>
+                        <p class="mt-1 text-sm text-muted">Sverige, remote</p>
+
+                        <p class="mt-5 text-sm font-semibold">Svarstid</p>
+                        <p class="mt-1 text-sm text-muted">Ofta samma dag på vardagar</p>
+                    </div>
+                </div>
+
+                <div class="md:col-span-7">
+                    <form id="contactForm" class="rounded-3xl bg-panel/60 p-6 ring-1 ring-line">
+                        <div class="grid gap-4 md:grid-cols-2">
+                            <label class="block">
+                                <span class="text-sm font-medium">Namn</span>
+                                <input name="name" type="text" required
+                                    class="mt-2 w-full rounded-2xl bg-white/5 px-4 py-3 text-sm ring-1 ring-line placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-brand"
+                                    placeholder="Ditt namn" />
+                            </label>
+
+                            <label class="block">
+                                <span class="text-sm font-medium">E-post</span>
+                                <input name="email" type="email" required
+                                    class="mt-2 w-full rounded-2xl bg-white/5 px-4 py-3 text-sm ring-1 ring-line placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-brand"
+                                    placeholder="namn@bolag.se" />
+                            </label>
+
+                            <label class="block md:col-span-2">
+                                <span class="text-sm font-medium">Vad vill du bygga?</span>
+                                <textarea name="message" rows="6" required
+                                    class="mt-2 w-full rounded-2xl bg-white/5 px-4 py-3 text-sm ring-1 ring-line placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-brand"
+                                    placeholder="Exempel: one page-sajt, webbapp, integration, automation. Deadline och mål hjälper också."></textarea>
+                            </label>
+                        </div>
+
+                        <div class="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                            <button type="submit"
+                                class="inline-flex items-center justify-center rounded-xl bg-brand px-5 py-3 text-sm font-semibold hover:opacity-90">
+                                Skicka
+                            </button>
+                            <p id="formStatus" class="text-sm text-muted"></p>
+                        </div>
+                    </form>
+
+                    <p class="mt-4 text-xs text-muted">
+                        Formuläret skickar via din mailklient (mailto) för att hålla sidan helt statisk.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="border-t border-line bg-bg/60">
+            <div class="mx-auto max-w-6xl px-4 py-8">
+                <div class="flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
+                    <p class="text-sm text-muted">© <span id="year"></span> Vareon. Alla rättigheter förbehållna.</p>
+                    <div class="flex gap-4 text-sm text-muted">
+                        <a class="hover:text-white" href="#top">Till toppen</a>
+                        <a class="hover:text-white" href="mailto:hello@vareon.se">hello@vareon.se</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        // Mobile nav toggle
+        const mobileBtn = document.getElementById("mobileBtn");
+        const mobileNav = document.getElementById("mobileNav");
+        mobileBtn?.addEventListener("click", () => {
+            mobileNav.classList.toggle("hidden");
+        });
+
+        // Close mobile nav after click
+        mobileNav?.querySelectorAll("a").forEach(a => {
+            a.addEventListener("click", () => mobileNav.classList.add("hidden"));
+        });
+
+        // Footer year
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+        // Mailto form submit
+        const form = document.getElementById("contactForm");
+        const statusEl = document.getElementById("formStatus");
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            const data = new FormData(form);
+            const name = String(data.get("name") || "").trim();
+            const email = String(data.get("email") || "").trim();
+            const message = String(data.get("message") || "").trim();
+
+            if (!name || !email || !message) {
+                statusEl.textContent = "Fyll i alla fält.";
+                return;
+            }
+
+            const subject = encodeURIComponent("Förfrågan Vareon");
+            const body = encodeURIComponent(
+                `Namn: ${name}\nE-post: ${email}\n\nMeddelande:\n${message}\n`
+            );
+
+            statusEl.textContent = "Öppnar din mailklient...";
+            window.location.href = `mailto:hello@vareon.se?subject=${subject}&body=${body}`;
+            setTimeout(() => (statusEl.textContent = ""), 3000);
+        });
+    </script>
+</body>
+
+</html>
